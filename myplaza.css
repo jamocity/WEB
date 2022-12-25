@@ -1,0 +1,74 @@
+body{
+				background:white;		
+				padding-left:50px;
+				padding-right:50px;
+		        height: 400px;
+				margin:0px;
+				color: black;
+				font-weight:bold;
+   font-size:20px;
+   color:purple;
+}
+span{
+				font-size:15px;
+				background-color:;
+				padding:px;
+				margin:30px;
+				height:100px;
+				width:100px;
+				font-weight:bolder;
+}
+
+#times{
+			margin-left:100px;
+			background-color: white;
+			color: black;
+			font-size:60px;
+
+}
+
+
+
+img{
+				width:100px;
+				height:100px;
+
+}
+#menu{
+	width: 900px;
+	height:80px;
+	padding-left:100px;
+	margin-left:0px;
+	background-color:black;
+	color: coral;
+	
+}
+#link{
+ width:100px;
+ height:80px;
+ border:none;
+ color: black;
+ margin-left: 100px;
+ background-color:black;
+ font-family:fantasy;
+ font-weight:bold;
+ font-size:25px;
+ text-decoration:none;
+}
+a:hover{
+ color: white;
+
+}
+a{color:blue;
+text-decoration:none;}
+
+
+    
+
+
+				
+
+   
+
+
+

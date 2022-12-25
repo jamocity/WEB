@@ -1,0 +1,190 @@
+body{
+     background-color:darkslateblue;
+     padding:0px;
+     color:white;
+     text-justify: inter-cluster;
+     height: fit-content;
+     width:fit-content;
+     font-family: fantasy;
+     }
+.spa{
+				text-decoration:none;
+				font-size:bold;
+				color:black;
+				display:none;
+}
+#menu{
+     width: fit-content;
+     height:160px;
+     padding-left:100px;
+     margin-left:0px;
+     background-color:black;
+     
+}
+#menu{
+  width: 1000px;
+  height:160px;
+  padding-left:100px;
+  margin-left:0px;
+  background-color:black;
+  
+}
+#footer{
+	background-color: black;
+	width: fit-content;
+	 margin-top:300px;
+   height:100px;
+
+}
+#footer{
+	background-color: black;
+	width: 1000px;
+	 margin-top:300px;
+   height:100px;
+   color:white;
+
+}
+a:hover{
+  color: white;
+
+}
+a{color:blue;
+text-decoration:none;}
+
+#create,#link{
+  width:80px;
+  border:none;
+  color: blue;
+  margin-left: 80px;
+  background-color:black;
+  font-family:fantasy;
+  font-weight:bolder;
+  font-size:25px;
+  text-decoration:none;
+}
+.spa{
+				font-size:15px;
+				color:brown;
+				
+}
+
+#sect2{
+    margin-left:5px;
+    
+    width:400px;
+    height:100px;
+    margin-top: 10px;
+}
+
+
+#link:active{
+  color:red;
+  font-size:35px;
+}
+#sect{
+  margin-left:500px;
+  width:550px;
+  height:650px;
+
+  
+}
+img{
+    border:none;
+    margin:15px;
+
+    
+}
+img:hover{
+  margin-top: -10px;
+}
+#info{
+     width: 270px;
+     margin-left: 820px;
+	 margin-top: -515px;
+    height: 470px;
+  
+  
+
+}
+#menu-but1{
+				width:50px;
+				height: 60px;
+				background-color: black;
+			 padding:20px;
+				
+} 
+#greet{margin-left: 600px;
+  color: goldenrod;
+  border:none;
+  font-size:x-large;
+  margin-bottom: 600px;
+  }
+#owner{
+   width:70px;
+   height:620px;
+   color:white;
+   margin-top:-70px;
+   font-size:25px;
+   color: white;
+   background-color:black;
+   
+   
+}
+h2{text-align: center;
+font-size:100px;}
+tittle{
+     font-size:50px;
+     float:top;
+     
+      
+      margin:none;
+      height:120px;
+      width:fit-content;
+      animation-name:myanimation;
+       
+       animation-delay:2s;
+       
+       animation-duration:6s;
+       
+       animation-iteration-count:infinite;
+       
+       animation-timing-function:ease-in-out;
+       
+       animation-direction:forward;
+}
+    
+
+     @keyframes myanimation{
+      0%{color:white;}
+      25%{color:green;}
+      50%{color:red;}
+      75%{color:gold;}
+      100%{color:hotpink;}
+
+
+
+   }
+  #pulse{
+  
+  animation-name: pulse;
+  animation-timing-function: ease-in-out;
+   animation-iteration-count:infinite;
+}
+@keyframes pulse{
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+     
+
+
+

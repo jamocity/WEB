@@ -1,0 +1,167 @@
+
+    
+        body{
+       height:200px;
+        width:250px;
+        text-transform:uppercase;
+        padding:10px;
+        opacity:1;
+        background-color:white;
+        color:white;
+        }
+        table{
+           border-spacing:0px;
+           width:900px;
+           opacity:1;
+           background:white;
+           
+        }
+        #menu{
+         width: 900px;
+         height:80px;
+         padding-left:100px;
+         margin-left:0px;
+         background-color:coral;
+         color: black;
+         
+    }
+    #link{
+      width:100px;
+      height:80px;
+      border:none;
+      color: white;
+      margin-left: 100px;
+      background-color:coral;
+      font-family:fantasy;
+      font-weight:bold;
+      font-size:25px;
+      text-decoration:none;
+    }
+    a:hover{
+      color: white;
+    
+    }
+    a{color:blue;
+    text-decoration:none;
+  background-color:coral}
+    
+     #times{
+			position:left;
+}
+
+
+			
+				
+
+        
+        #div5{
+            display:none;
+            font-family:wingdings;
+            font-weight:bold;
+          background-color:pink;
+            
+        
+        }
+        #img1{
+         width:100px;
+         height:69px;  
+        }
+        #back{
+           width:200px;
+           height:80px;
+           background:red;
+           margin-left:20px;
+           text-transform:uppercase;
+           border:none;
+        }
+         #next{
+           width:200px;
+           height:80px;
+           background:red;
+           margin-left:30px;
+           text-transform:uppercase;
+           border:none;
+        }
+         #but5{
+           width:100px;
+           height:40px;
+           background:red;
+           margin-left:30px;
+           text-transform:uppercase;
+           border:none;
+        }
+        
+        tr{
+        				width:250px;
+        				height:140px;
+        				font-weight:bold;
+        				font-size:20px;
+        			  font-family:new roman verdena;
+        			  color:white;
+
+        }
+        td{
+        	padding:20px;			
+        	color:black;
+          background-color:hotpink;			
+        }
+        #stat{
+           width:500px;
+           height:60px;
+           background-color:red;     
+           text-transform:uppercase;
+           border:none; 
+           color:black;
+           
+        }
+        .tree1{
+        				width:350px;
+        				height:50px;
+        			padding:20px;
+        			background-color:white;
+        }
+      
+    
+        input{
+        height:50px;
+        width:50px;
+        border:none;}
+        
+        #div1{
+        height:60px;
+        width:600px;
+        padding:0px;
+        text-align:center;
+        justify-content:center;
+        background:darksalmon;
+        }
+        #card{
+       display:none;
+       background:hotpink;
+      width:600px;	
+       padding-left:100px;	
+       margin:100px;
+       	
+        }
+        #but1{
+        height:70px;
+        width: 900px;
+        color:black;
+        background:red;
+        border:none;
+        margin-left:0px;
+        font-size:15px;
+        font-weight:bold;
+        }
+      
+    #atm{
+      color:black;
+      width:500px;
+      height:300px;
+      border-radius: 5px;
+      border:none;
+      background-color: blue;
+    }
+    #payment{
+      color:black;
+    }

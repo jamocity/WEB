@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DYNAMIC TABLE</title>
+	<style> #td1,td{
+	    background-color:cyan;
+		width:300px;
+		margin-up:25px;
+	}
+	#head{
+	background-color:deepskyblue;
+	
+	}
+	body{
+	background-color:tael;
+	
+	}
+	</style>
+	<script>
+	function f1(){
+	
+	var n1 = document.getElementById("box1");
+	var newtr= "<tr>"+"<td>"+inp1.value+"</td>"+"<td>"+inp2.value+"</td>"+"<td>"+inp3.value+"</td>"+"</tr>";
+	alert("hello world");
+	n1.innerHTML+=newtr;
+	
+
+	
+	}
+	</script>
+</head>
+<body style="background-color:blue;">
+<div>User name:
+<input width="200px" id="inp1" height="45px"/><br><br>
+password:
+<input width="200px" id="inp2" type="password"  height="45px"/><br><br>
+E-mail:
+<input width="200px" id="inp3" type="email" height="45px"/><br>
+<button id="but1" onclick="f1()">CLICK</button>
+</div>
+<br><br>
+<div id="box">
+
+</div>
+<div>
+<table id="box1" style="border-width:1;background-color:coral;">
+
+<tr id="head">
+<td>USER NAME</td>
+<td>PASSWORD</td>
+<td>E-MAIL</td>
+</tr>
+
+<br><br>
+
+<tr>
+<td id="td1">jamiu</td>
+<td>1910203089</td>
+<td>jamiuopeyemi176@gmail.com</td>
+</tr>
+</table>
+
+</div>
+</body>
+</html>

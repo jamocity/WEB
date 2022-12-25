@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+   <link rel="stylesheet" href="shopping.css">
+    <script>
+      //this function display the product table and hide the preceeding functiion that are not yet needed -->
+     function f02(){
+ 						var n1=document.getElementById("menu");
+ 						n1.style.display="block";
+ 				
+       var n3=document.getElementById("payment");
+     n3.style.display="none"; 
+     var n4=document.getElementById("atm");
+     n4.style.display="none"; 
+ 		}		
+     //this function display the menu content as the div is clicked
+ 				function f2(){
+ 						var n1=document.getElementById("menu");
+ 						n1.style.display="block";
+ 						
+ 				}
+         //this hide the content of the menu when click
+ 						function times(){
+ 						var n1=document.getElementById("menu");
+ 						n1.style.display="none";
+ 		
+ 				}
+ 				//this is added to the purchase button to hide any other  content add show card content 
+     function f1(){
+
+      var n1=document.getElementById("tab1");
+     n1.style.display="none";
+     var n2=document.getElementById("card");
+     n2.style.display="block";
+     var n3=document.getElementById("payment");
+     n3.style.display="none"; 
+     var n4=document.getElementById("atm");
+     n4.style.display="none"; 
+        var itemTotal=0;
+        var output=" ";
+         var n1=document.getElementsByTagName("input");
+         //iteration to get all input on the own page
+       for(var i=0;i<32;i++){
+         //check if any imput is checked or more
+       if(n1[i].checked){
+         //to get value of input i.e product price
+       itemTotal+=(n1[i].value*1);
+       //this create an html-tag h2 and add name,and price of the product aqnd store it insode product
+       output+="<h2>"+n1[i].name+"<br/>"+"#"+n1[i].value+"<br/>"+"</h2>"+"<br/>";
+       
+       }     
+    //this call the class div and insert "output" insert it
+     document.getElementById("card#").innerHTML="<h2>"+"the product and their respective prices selected are :"+"</h2>"+"<br/>"+"<br/>"+output+"<br/>"+"<h2>"+"total :"+"#"+itemTotal+".00"+"</h2>";  
+           
+  }
+    
+    }  
+          
+    r
+     
+    alert(" warm welcome to you as you are going toproduct section");
+   //to go back to the product table  card page
+    function back(){
+    var n1=document.getElementById("tab1");
+     n1.style.display="block";
+     var n2=document.getElementById("card");
+     n2.style.display="none"; 
+     var n3=document.getElementById("payment");
+     n3.style.display="none";
+     var n4=document.getElementById("atm");
+     n4.style.display="none"; 
+
+    }
+    //function that moves from card to payment method
+    function f9(){  
+       
+       var n1=document.getElementById("tab1");
+     n1.style.display="none";
+     var n2=document.getElementById("card");
+     n2.style.display="none";
+     var n3=document.getElementById("payment");
+     n3.style.display="block"; 
+     var n4=document.getElementById("atm");
+     n4.style.display="block"; 
+     
+     }
+     //function that handle payment method
+     function f5(){
+    var n1=document.getElementById("address");
+    if(n1.value=""){
+    alert("please make sure you enter your address");}
+      else{  alert("thank you!!!");
+     
+    //note:there bolw is a table where all product are stored with their information
+    //the name of the product is written after the opening tag of each row oof the table in case if you wanr to edif
+   //name of the product is also the name of the input(checkbox)
+   //the price of the product is the value of theinput(checkbox)
+  }   } 
+    </script>
+   <head>
+
+<body onload="f02()">
+
+  <div id="menu">
+				  		 	
+    <button id="link">
+    <a href="home.html"><span>HOME</span></a>
+</button>
+
+<button id="link">	<a href="shopping.html"><span>PRODUCT</span></a>
+</button>
+
+<button id="link">	
+<a href="aboutus.html"><span>ABOUT</span></a></button>
+
+   <button id="link">
+     <a href="contact.html"><span>CONTACT</span></a></button>   			
+
+</div>
+    
+<div id="tab1">
+  <h1>SHOPPING STORE</h1>
+  
+    
+     <caption><h2>available product</h2></caption>
+      <table  border="1">
+      
+      <tr class="tree2">
+     <td>FOOD</td>
+     <td>DRINK</td>
+     <td>CLOTH</td>
+     <td>OTHER</td>
+     </tr>
+     <tr class="tree1">
+     <td>
+       
+       rice<br/>
+      <img width="150px" height="200px" src="img16.jpg"/>
+    <br/>
+    quality: 1 congo  
+    <br/>
+    price: #650
+    
+     <br/>
+     <input  name="rice" value="650" id="rice" type="checkbox"/></td>
+     <td>coka kola
+     <br/>
+      <img width="150px" height="200px" src="img11.jpg"/>
+    <br/>
+    quality: 1 bottle 
+    <br/>
+    price: #100
+    <br/>     <input name="coka kola" value="150" id="kola" type="checkbox"/></td>     </td>
+     <td>shirt
+     <br/>
+     <img width="150px" height="200px" src="img3.jpg"/>
+    <br/>
+    quality: 1 
+    <br/>
+    price: #700
+    <br/>
+     <input name="shirt" value="700" id="shirt" type="checkbox"/></td>     </td>
+     <td>eye glasses
+     <br/>
+    <img width="150px" height="200px" src="img10.jpg"/>
+    <br/>
+    quality: 1  
+    <br/>
+    price: #450
+    <br/> 
+     
+     <input name="eye glass" value="450" id="glass" type="checkbox"/></td>
+      
+      </td>
+     </tr>
+    <tr class="tree1">
+     <td>bread
+     <br/>
+      <img width="150px" height="200px" src="img9.jpg"/>
+    <br/>
+    quality: 1 
+    <br/>
+    price: #300
+    <br/>     
+     <input name="bread" value="300" id="bread" type="checkbox"/></td>
+     <td>nitri-milk
+     <br/>
+      <img width="150px" height="200px" src="img8.jpg"/>
+    <br/>
+    quality: 1 bottle 
+    <br/>
+    price: #200
+    <br/>     
+     <input name="nitri milk" value="200" id="Nmilk" type="checkbox"/></td>     </td>
+     <td>long sleve
+     
+     
+     <br/>
+   <img width="150px" height="200px" src="img2.jpg"/>
+    <br/>
+    quality: 1 piece 
+    <br/>
+    price: #1000
+    <br/>  
+     
+     
+     <input name="lonf sleve" value="1000" id="skt" type="checkbox"/></td>     </td>
+     <td>perfumes
+     <br/>
+     <img width="150px" height="200px" src="img7.jpg"/>
+    <br/>
+    quality:  1
+    <br/>
+    price: #650
+    <br/>
+    
+     
+     <input name="perfumes" value="650" id="perf" type="checkbox"/></td>
+      
+      </td>
+     </tr>
+   <tr class="tree1">
+     <td>golden morn.
+     <br/>
+     
+    <img width="150px" height="200px" src="img8.jpg"/>
+    <br/>
+    quality: 500g
+    <br/>
+    price: #950
+    <br/> 
+     <input name="golden morn." value="950" id="gmorn" type="checkbox"/></td>
+     <td>fresh yo
+     
+     
+     <br/>
+     
+     <img width="150px" height="200px" src="img12.jpg"/>
+    <br/>
+    quality: 50cl 
+    <br/>
+    price: #150
+    <br/>
+     <input name="fresh yo"  value="150"  id="yogu" type="checkbox"/></td>     </td>
+     <td>trousers
+     <br/>
+   <img width="150px" height="200px" src="img6.jpg"/>
+    <br/>
+    quality: 1 pair
+    <br/>
+    price: #2000
+    <br/>  
+     
+     <input name="trousers" value="2000" id="short" type="checkbox"/></td>     </td>
+     <td>soap
+     <br/>
+     
+     <img width="150px" height="200px" src="img5.jpg"/>
+    <br/>
+    quality: 1 
+    <br/>
+    price: #250
+    <br/>
+     <input name="soap" value="250" id="soap" type="checkbox"/></td>
+      
+      </td>
+     </tr>
+   <tr class="tree1">
+     <td>conflakes
+     <br/>
+     
+    <img width="150px" height="200px" src="img13.jpg"/>
+    <br/>
+    quality: 500g
+    <br/>
+    price: #750
+    <br/> 
+     <input name="conflakes" value="750" id="flake" type="checkbox"/></td>
+     <td>lakasara
+     <br/>
+  <img width="150px" height="200px" src="img13.jpg"/>
+    <br/>
+    quality: 1 bottle 
+    <br/>
+    price: #150
+    <br/>   
+     
+     <input name="lakasara"  value="150" id="lak" type="checkbox"/></td>     </td>
+     <td>jalabia
+     <br/>
+  <img width="150px" height="200px" src="img14.jpg"/>
+    <br/>
+    quality: 1 piece
+    <br/>
+    price: #5000
+    <br/>   
+     
+     
+     <input name="jalabia" value="5000" id="jal" type="checkbox"/></td>     </td>
+     <td>vegetable oil
+     <br/>
+     
+  <img width="150px" height="200px" src="img4.jpg"/>
+    <br/>
+    quality: 1000g 
+    <br/>
+    price: #1350
+    <br/>   
+     <input name="vegetable oil" value="1350" id="veg" type="checkbox"/></td>
+      
+      </td>
+     </tr>
+     <tr class="tree1">
+      <td>rice<br/>
+       <img width="150px" height="200px" src="img16.jpg"/>
+     <br/>
+     quality: 1 congo  
+     <br/>
+     price: #650
+     
+      <br/>
+      <input  name="rice" value="650" id="rice" type="checkbox"/></td>
+      <td>coka kola
+      <br/>
+       <img width="150px" height="200px" src="img11.jpg"/>
+     <br/>
+     quality: 1 bottle 
+     <br/>
+     price: #100
+     <br/>     <input name="coka kola" value="150" id="kola" type="checkbox"/></td>     </td>
+      <td>shirt
+      <br/>
+      <img width="150px" height="200px" src="img3.jpg"/>
+     <br/>
+     quality: 1 
+     <br/>
+     price: #700
+     <br/>
+      <input name="shirt" value="700" id="shirt" type="checkbox"/></td>     </td>
+      <td>eye glasses
+      <br/>
+     <img width="150px" height="200px" src="img10.jpg"/>
+     <br/>
+     quality: 1  
+     <br/>
+     price: #450
+     <br/> 
+      
+      <input name="eye glass" value="450" id="glass" type="checkbox"/></td>
+       
+       </td>
+      </tr>
+     <tr class="tree1">
+      <td>body cream
+      <br/>
+       <img width="150px" height="200px" src="img9.jpg"/>
+     <br/>
+     quality: 1 
+     <br/>
+     price: #300
+     <br/>     
+      <input name="bread" value="300" id="bread" type="checkbox"/></td>
+      <td>nitri-milk
+      <br/>
+       <img width="150px" height="200px" src="img8.jpg"/>
+     <br/>
+     quality: 1 bottle 
+     <br/>
+     price: #200
+     <br/>     
+      <input name="nitri milk" value="200" id="Nmilk" type="checkbox"/></td>     </td>
+      <td>long sleve
+      
+      
+      <br/>
+    <img width="150px" height="200px" src="img2.jpg"/>
+     <br/>
+     quality: 1 piece 
+     <br/>
+     price: #1000
+     <br/>  
+      
+      
+      <input name="lonf sleve" value="1000" id="skt" type="checkbox"/></td>     </td>
+      <td>perfumes
+      <br/>
+      <img width="150px" height="200px" src="img7.jpg"/>
+     <br/>
+     quality:  1
+     <br/>
+     price: #650
+     <br/>
+     
+      
+      <input name="perfumes" value="650" id="perf" type="checkbox"/></td>
+       
+       </td>
+      </tr>
+    <tr class="tree1">
+      <td>toothbrush.
+      <br/>
+      
+     <img width="150px" height="200px" src="img8.jpg"/>
+     <br/>
+     quality: 500g
+     <br/>
+     price: #200
+     <br/> 
+      <input name="toothbrush" value="200" id="gmorn" type="checkbox"/></td>
+      <td>fresh yo
+      
+      
+      <br/>
+      
+      <img width="150px" height="200px" src="img12.jpg"/>
+     <br/>
+     quality: 50cl 
+     <br/>
+     price: #150
+     <br/>
+      <input name="fresh yo"  value="150"  id="yogu" type="checkbox"/></td>     </td>
+      <td>trousers
+      <br/>
+    <img width="150px" height="200px" src="img6.jpg"/>
+     <br/>
+     quality: 1 pair
+     <br/>
+     price: #2000
+     <br/>  
+      
+      <input name="trousers" value="2000" id="short" type="checkbox"/></td>     </td>
+      <td>soap
+      <br/>
+      
+      <img width="150px" height="200px" src="img5.jpg"/>
+     <br/>
+     quality: 1 
+     <br/>
+     price: #250
+     <br/>
+      <input name="soap" value="250" id="soap" type="checkbox"/></td>
+       
+       </td>
+      </tr>
+    <tr class="tree1">
+      <td>conflakes
+      <br/>
+      
+     <img width="150px" height="200px" src="img13.jpg"/>
+     <br/>
+     quality: 500g
+     <br/>
+     price: #750
+     <br/> 
+      <input name="conflakes" value="750" id="flake" type="checkbox"/></td>
+      <td>lakasara
+      <br/>
+   <img width="150px" height="200px" src="img13.jpg"/>
+     <br/>
+     quality: 1 bottle 
+     <br/>
+     price: #150
+     <br/>   
+      
+      <input name="lakasara"  value="150" id="lak" type="checkbox"/></td>     </td>
+      <td>toothpast
+      <br/>
+   <img width="150px" height="200px" src="img14.jpg"/>
+     <br/>
+     quality: 1 piece
+     <br/>
+     price: #550
+     <br/>   
+      
+      
+      <input name="jalabia" value="550" id="jal" type="checkbox"/></td>     </td>
+      <td>toothpaste
+      <br/>
+      
+   <img width="150px" height="200px" src="img4.jpg"/>
+     <br/>
+     quality: 1000g 
+     <br/>
+     price: #550
+     <br/>   
+      <input name="toothpast" value="1500" id="tooth" type="checkbox"/></td>
+       
+       </td>
+      </tr>
+      </table>
+      
+     <div  id="div">
+         <button id="but1" onclick="f1()" type="button">purchase</button>
+
+         
+     </div> 
+    </div>
+   
+    <div id="card">
+ <button id="stat"><h1>shopping statistics</h1></button>
+         
+                   <h2>my card</h2> 
+                <div id="card#">
+                      
+                  </div>  
+                   
+                  <button onclick="back()" id="back"><h2>back to shopping<h2></button>   
+                 <button onclick="f9()" id="next"><h2> proceed<h2></button> 
+                
+   
+     </div>
+  
+      
+   </div>
+   <div id="atm">link your card</div>
+   <div id="payment">
+     <h2>now to finish up your shopping kindly make your paymemt to the account number bellow <br/>4000016118 
+     
+    </h2>
+<br><br>
+  <h2>please send your evidence of payment to the bellow contacts <br> 08056478902 <br>09076543219 </h2>
+
+   </div>
+</body>
+</html>

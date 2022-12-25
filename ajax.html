@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <tittle>
+      </tittle>
+    <script>
+	
+	function loadText(){
+	alert("fecthing button is activated");
+	
+	var xhr=new XMLHttpRequest();
+	xhr.open('GET','sample.txt',true);
+	xhr.onload=function(){
+	if(this.status==200){
+    document.getElementById("text").innerHTML=this.responseText;
+	}
+	}
+	xhr.send();
+	}
+	
+	</script>
+</head>
+	<body>AJAX DATA FETCHING<br><br><br>
+	<button id="but1" onclick="loadText()">get text file
+	</button><br><br><br>
+	<div id="text"> this is data div</div>
+	</body>
+</html>

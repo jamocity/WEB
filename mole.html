@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .square{
+            width: 200px;
+            height: 200px;
+            border-style: solid;
+            border-color: black;
+        }
+        .grid{
+            display:flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            width: 618px;
+            height: 618px;
+        }
+        .mole{
+            background-image: url(img10.jpg);
+            background-size: cover;
+        }
+    </style>
+    <script>
+        function movemole2(){
+            alert("let play");
+            movemole();
+        }
+        const square=document.querySelectorAll('.square');
+        const mole=document.querySelectorAll('mole');
+        const timeleft=document.querySelectorAll('#timeleft');
+        let square=document.querySelectorAll('#score');
+        let result=0;
+        let currentTime=timeleft.textContent;
+        function randomSquare(){
+            square.forEach(className=>{className.classList.remove('mole')})
+            let randomPosition=square[Math.floor(Math.random()*9)];
+            randomPosition.classList.add('mole');
+            hitposition=randomPosition.id;
+        }
+        square.forEach(id=>{id.addEventListener('mouseup',()=>{if(id.id===hitposition){
+            result=result+1;score.textContent=result
+        }})})
+        function movemole(){
+            let timeId=null;
+            timeId=setInterval(randomSquare,1000)
+        }
+    </script>
+</head>
+<body onload="movemole2()">
+<h1>whack mole</h1>
+<h2>your score</h2>
+<h2>seconds left</h2>
+<h2 id="timeleft">60</h2>
+<div class="grid">
+    <div class="square" id="1"></div>
+    <div class="square" id="2"></div>
+    <div class="square" id="3"></div>
+    <div class="square" id="4"></div>
+    <div class="square" id="5"></div>
+    <div class="square" id="6"></div>
+    <div class="square" id="7"></div>
+    <div class="square" id="8"></div>
+    <div class="square" id="9"></div>
+</div>
+</body>
+</html>

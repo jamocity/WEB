@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function start(){
+
+            for(var j=0;j<=5;j++){
+               
+                f2();}
+                checkForMatch();
+        }
+     function f2(){
+     var newDiv=document.createElement("input");
+      var n1=Math.floor(Math.random()*10);
+      var n2=document.getElementById("div1");
+      newDiv.setAttribute('type', 'button');
+newDiv.setAttribute('style', 'width:50px; font-weight:bold; background-color:yellow; height:60px; border:none;margin:20px;border-radius:30px; font-width:20px; color:black;');
+      
+       newDiv.value=n1;
+      n2.appendChild(newDiv);
+     }
+     
+     function checkForMatch(){
+     var n1=document.getElementsByTagName('input');
+     
+     n1[0].style.backgroundColor="cyan";
+     }
+     function f1(){
+         
+         var n2=document.getElementById('countdown');
+         var n3;
+       for(n3=10;n3>0;n3--){ 
+        n2.innerHTML=n3;}
+       setInterval(f1,1000);
+
+       }
+        
+    
+        
+    
+        
+     
+        
+      
+     
+     </script>
+    <style>
+      #but1{
+          background-color: red;
+          color:white;
+          width:80px;
+          height:50px;
+          border:none;
+          font-weight: bold;
+      }
+       body{
+           font-family: fantasy;
+           background-color:deepskyblue;
+           text-align: center;
+
+
+
+
+
+
+
+
+       }
+   #countdown{
+       width:60px;
+       height:50px;
+       border: none;
+       border-radius: 15px;
+       margin-left: 250px;
+   }
+   #score{
+       width:60px;
+       height:50px;
+       border: none;
+       border-radius: 15px;
+       
+
+   }
+    </style>
+</head>
+
+
+
+
+<body onload="start()"><h1>EGG MATCH</h1>
+    <div id="container" style="width:350px; margin-left:400px; height:fit-content; background-color:blue;">
+
+     <button id="score">score:  </button>
+      <button id="countdown">10</button>
+    <div id="div1" style="width:300px; height:200px; margin-left: 0px;  padding:20px; background-color: coral;">
+
+    
+    </div>
+    <button onclick="f1()" id="but1">retry</button>
+</div>
+</body>
+</html>

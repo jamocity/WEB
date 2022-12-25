@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <tittle>
+      svg</tittle>
+    
+ 
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
+      <link rel="stylesheet" href="plaza.css"/>
+   <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>
+	#tree{
+	background-color:deepskyblue;
+	animation-name:myanimation;
+       
+       animation-delay:2s;
+       
+       animation-duration:6s;
+       
+       animation-iteration-count:infinite;
+       
+       animation-timing-function:ease-in-out;
+       
+       animation-direction:forward;}
+	@keyframes myanimation{
+	0%{transform:translate3d(100px 0px 0px);}
+	50%{transform:translate3d(200px 0px 0px);}
+	100%{transform:translate3d(100px 0px 0px);}
+	}
+	</style>
+  </head>
+<body onload="f0()">
+ 
+ <svg id=tree"" x="20" y="200" width="1000px" height="600px" style=" border:4; margin-top:20px; margin-left:20px;">
+ <g  x="300" y="100" style="margin-left:300px;">
+ <circle
+ cx="150"
+ cy="150"
+ r="50"
+ fill="darkred"
+ stroke="darkred"
+ stroke-weight="3"/>
+ 
+ <circle
+ cx="100"
+ cy="230"
+ r="50"
+ fill="darkred"
+ stroke="darkred"
+ stroke-weight="0"/>
+ 
+ <circle
+ cx="180"
+ cy="230"
+ r="50"
+ fill="darkred"
+ stroke="darkred"
+ stroke-weight="0"/>
+ 
+ 
+ 
+ <rect x="120" y="240" width="40px" height="250px" fill="darkred">
+ </g>
+ <circle cx="80" r="150" cy="500"  fill="darkblue"/>
+ <rect x="0" y="530" width="1000px" height="20px" fill="white"></rect>
+ </svg>
+
+ </body>
+ </html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+   <head>
+    <meta charset="UTF-8">
+      <tittle>
+UNITY THE COMPLEX MACHINE</tittle>
+        <style>
+    body{
+     background:darkblue; 
+      
+    
+      }
+    .div1{
+     height:200px;
+     width:200px;
+     border-radius:100%;
+     background:azure;
+     text-align:center;
+     margin-left:50%;
+     animation:rotation -2s infinite;
+     animation-duration:4s;
+     
+     animation-timing-function:ease-in-out;
+     animation-direction:alternate;
+}
+       @keyframes rotation{
+        0%{transform:rotate(0deg);}
+        100%{transform:rotate(359deg);border-radius:5%;}
+
+}
+
+    tittle{
+     font-size:50px;
+     float:top;
+     background-color:black;
+      
+      margin:none;
+      height:120px;
+      animation-name:myanimation;
+       
+       animation-delay:2s;
+       
+       animation-duration:6s;
+       
+       animation-iteration-count:infinite;
+       
+       animation-timing-function:ease-in-out;
+       
+       animation-direction:forward;
+}
+    
+
+     @keyframes myanimation{
+      0%{color:deepskyblue;}
+      25%{color:blue;}
+      50%{color:brown;}
+      75%{color:deepblue;}
+      100%{color:dodgerblue;}
+
+
+
+   }
+     
+
+
+
+    #inp2,#inp3,#inp4,#inp5,#inp6{
+         height:60px;
+         color:rgb(100,100,100);
+         border:0px;
+         width:130px;
+         margin-left:5px;
+         margin-top:-5px;
+         border-radius:10px;
+         border-style:double;
+         background-color:rgb(0,0,100);
+
+}
+   #inp2:hover,#inp3:hover,#inp4:hover,#inp5:hover,#inp6:hover{
+         font-size:17px;
+         background:lightblue;
+}
+
+p{color:white;}
+#box1{
+   margin-left:170px;
+   text-align:center;
+   margin-top:0px;
+
+}
+#box2{
+    margin-left:0px;
+    background-color:black;
+    width:150px;
+    margin-top:-80px;
+}
+#head1,#head2,#head3,#head4,#head5,#head6{
+   font-family:verdana;
+   border:0px;
+   background-color:black;
+   color:white;
+   width:150px;
+
+}
+   
+#head1:hover,#head2:hover,#head3:hover,#head4:hover,#head5:hover,#head6:hover{
+   background-color:green;
+}
+
+
+        </style>
+         <script></script>
+   </head>
+    <body>
+<div id="box3">
+<button onclick="f1()" id="inp2">amateur</button>
+<button onclick="f2()" id="inp3">beginner</button>
+<button onclick="f3()"id="inp4">advance</button>
+<button onclick="f4()" id="inp5">about</button>
+<button  onclick="f5()"id="inp6">contact</button>
+</div>
+<div id="box1">
+<h1> welcome to unity</h1>
+<p>UMM is the home of various web animations for beginners. Here we provide you the source code and alse show you how the react on the web pages.If anyone have interest in becoming a web animation developer this is the right place for you </div>
+<div id="box2">
+<button  onclick="f6()"id="head1">contact</button><br/>
+<button onclick="f7()"id="head2">help</button><br/>
+<button onclick="f8()"id="head3">about</button><br/>
+<button onclick="f9()" id="head4">comment</button><br/>
+<button onclick="f10()"id="head5">observation</button><br/>
+<button onclick="f11()"id="head6">amendment</button><br/>
+</div>
+
+<br/><div id="anim1"><div class="div1"></div></div>
+
+
+
+
+    </body>
+
+  </htmL>
