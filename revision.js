@@ -1,11 +1,13 @@
 var compliment="congratulations for the ceremony today ,long life i wish you all";
 var age=20;
- var repeat=setInterval( ()=>{
-  console.log(compliment);
-  age++;
-  if (age==24) {
-    clearInterval(repeat);
-  }
-}, 1000)
+ var name="Okunlola"
+ var name2="jamiu"
+ var name3="opeyemi"
 
-module.exports.age=age;
+
+module.exports={
+    name:name,
+    name2:name2,
+    name3:name3
+
+}

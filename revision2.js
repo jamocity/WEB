@@ -1,2 +1,6 @@
-const revision = require('./revision.age');
-console.log("i am now "+ revision.age +" years old");
+const fs = require('fs');
+
+var reader=fs.readFile('readme.txt','utf8', (err, data)=>{
+  console.log(data);
+});
+fs.writeFile('writeMe2.txt', reader);
