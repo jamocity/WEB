@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - EduPlatform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <i class="fas fa-graduation-cap me-2"></i>EduPlatform
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="student-dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="certificates.html">Certificates</a>
+                    </li>
+                    <li class="nav-item dropdown" id="user-info">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-1"></i><span class="user-name">Student</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                            <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logout-btn">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <section class="bg-light py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1><i class="fas fa-tachometer-alt me-3"></i>Student Dashboard</h1>
+                    <p class="lead mb-0">Welcome back, <span class="user-name">Student</span>! Continue your learning journey.</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a href="courses.html" class="btn btn-primary">
+                        <i class="fas fa-plus me-2"></i>Browse Courses
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Dashboard Content -->
+    <main class="container py-5">
+        <!-- Stats Cards -->
+        <div id="student-dashboard">
+            <!-- Content will be loaded dynamically -->
+            <div class="text-center py-5">
+                <div class="loading"></div>
+                <p class="mt-3">Loading dashboard...</p>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <h3>Quick Actions</h3>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <i class="fas fa-book fa-2x text-primary mb-3"></i>
+                                <h5>Browse Courses</h5>
+                                <p class="card-text">Discover new courses to expand your knowledge.</p>
+                                <a href="courses.html" class="btn btn-outline-primary">Browse</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <i class="fas fa-certificate fa-2x text-success mb-3"></i>
+                                <h5>My Certificates</h5>
+                                <p class="card-text">View and download your earned certificates.</p>
+                                <a href="certificates.html" class="btn btn-outline-success">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <i class="fas fa-user fa-2x text-info mb-3"></i>
+                                <h5>Profile</h5>
+                                <p class="card-text">Update your profile and preferences.</p>
+                                <a href="profile.html" class="btn btn-outline-info">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <i class="fas fa-question-circle fa-2x text-warning mb-3"></i>
+                                <h5>Help & Support</h5>
+                                <p class="card-text">Get help and support for your learning.</p>
+                                <a href="support.html" class="btn btn-outline-warning">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-clock me-2"></i>Recent Activity</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="timeline" id="recent-activity">
+                            <!-- Activity will be loaded dynamically -->
+                            <div class="text-center py-3">
+                                <p class="text-muted">No recent activity</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learning Goals -->
+        <div class="row mt-5">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-target me-2"></i>Learning Goals</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="goal-input" class="form-label">Set a new learning goal</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="goal-input" 
+                                       placeholder="e.g., Complete 3 courses this month">
+                                <button class="btn btn-primary" type="button" id="add-goal">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="goals-list">
+                            <!-- Goals will be loaded from localStorage -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-calendar me-2"></i>Study Schedule</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="study-time" class="form-label">Daily Study Goal</label>
+                            <select class="form-select" id="study-time">
+                                <option value="30">30 minutes</option>
+                                <option value="60" selected>1 hour</option>
+                                <option value="90">1.5 hours</option>
+                                <option value="120">2 hours</option>
+                                <option value="180">3 hours</option>
+                            </select>
+                        </div>
+                        <div class="progress mb-3">
+                            <div class="progress-bar" id="today-progress" style="width: 0%">0%</div>
+                        </div>
+                        <p class="text-muted mb-0">
+                            <i class="fas fa-clock me-1"></i>
+                            <span id="today-time">0 minutes</span> studied today
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommended Courses -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <h3>Recommended for You</h3>
+                <div class="row" id="recommended-courses">
+                    <!-- Recommended courses will be loaded dynamically -->
+                    <div class="col-12 text-center py-3">
+                        <p class="text-muted">Loading recommendations...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center py-3">
+                <p class="mb-0">&copy; 2024 EduPlatform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main JavaScript -->
+    <script src="../js/app.js"></script>
+    
+    <script>
+        // Student Dashboard specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in and is a student
+            if (window.app && window.app.currentUser) {
+                if (window.app.currentUser.role !== 'student') {
+                    window.location.href = 'instructor-dashboard.html';
+                    return;
+                }
+                loadRecommendedCourses();
+                loadGoals();
+                loadStudyProgress();
+            } else {
+                // Redirect to login if not authenticated
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 1000);
+            }
+        });
+
+        // Load recommended courses
+        async function loadRecommendedCourses() {
+            try {
+                const courses = await window.app.loadCourses();
+                const recommendedCourses = courses.slice(0, 3); // Get first 3 courses as recommendations
+                
+                const container = document.getElementById('recommended-courses');
+                container.innerHTML = recommendedCourses.map(course => `
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 150px;">
+                                ${course.thumbnail ? 
+                                    `<img src="${course.thumbnail}" class="img-fluid" alt="${course.title}">` :
+                                    `<i class="fas fa-play-circle fa-2x text-primary"></i>`
+                                }
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title">${course.title}</h6>
+                                <p class="card-text small">${course.description.substring(0, 80)}...</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="course-level level-${course.level}">${course.level}</span>
+                                    <a href="course-detail.html?id=${course.id}" class="btn btn-sm btn-primary">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading recommended courses:', error);
+            }
+        }
+
+        // Goals functionality
+        function loadGoals() {
+            const goals = JSON.parse(localStorage.getItem('learningGoals') || '[]');
+            renderGoals(goals);
+        }
+
+        function renderGoals(goals) {
+            const container = document.getElementById('goals-list');
+            if (goals.length === 0) {
+                container.innerHTML = '<p class="text-muted">No goals set yet. Add your first learning goal above!</p>';
+                return;
+            }
+
+            container.innerHTML = goals.map((goal, index) => `
+                <div class="goal-item d-flex justify-content-between align-items-center p-2 mb-2 bg-light rounded">
+                    <div class="d-flex align-items-center">
+                        <input type="checkbox" class="form-check-input me-2" ${goal.completed ? 'checked' : ''} 
+                               onchange="toggleGoal(${index})">
+                        <span class="${goal.completed ? 'text-decoration-line-through text-muted' : ''}">${goal.text}</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-danger" onclick="removeGoal(${index})">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        document.getElementById('add-goal').addEventListener('click', function() {
+            const input = document.getElementById('goal-input');
+            const goalText = input.value.trim();
+            
+            if (goalText) {
+                const goals = JSON.parse(localStorage.getItem('learningGoals') || '[]');
+                goals.push({
+                    text: goalText,
+                    completed: false,
+                    created: new Date().toISOString()
+                });
+                localStorage.setItem('learningGoals', JSON.stringify(goals));
+                input.value = '';
+                renderGoals(goals);
+            }
+        });
+
+        function toggleGoal(index) {
+            const goals = JSON.parse(localStorage.getItem('learningGoals') || '[]');
+            goals[index].completed = !goals[index].completed;
+            localStorage.setItem('learningGoals', JSON.stringify(goals));
+            renderGoals(goals);
+        }
+
+        function removeGoal(index) {
+            const goals = JSON.parse(localStorage.getItem('learningGoals') || '[]');
+            goals.splice(index, 1);
+            localStorage.setItem('learningGoals', JSON.stringify(goals));
+            renderGoals(goals);
+        }
+
+        // Study progress functionality
+        function loadStudyProgress() {
+            const today = new Date().toDateString();
+            const studyData = JSON.parse(localStorage.getItem('studyProgress') || '{}');
+            const todayMinutes = studyData[today] || 0;
+            const goalMinutes = parseInt(document.getElementById('study-time').value);
+            
+            const progress = Math.min((todayMinutes / goalMinutes) * 100, 100);
+            
+            document.getElementById('today-progress').style.width = progress + '%';
+            document.getElementById('today-progress').textContent = Math.round(progress) + '%';
+            document.getElementById('today-time').textContent = todayMinutes + ' minutes';
+        }
+
+        document.getElementById('study-time').addEventListener('change', function() {
+            localStorage.setItem('dailyStudyGoal', this.value);
+            loadStudyProgress();
+        });
+
+        // Simulate study time tracking (in a real app, this would be tracked during video watching)
+        function addStudyTime(minutes) {
+            const today = new Date().toDateString();
+            const studyData = JSON.parse(localStorage.getItem('studyProgress') || '{}');
+            studyData[today] = (studyData[today] || 0) + minutes;
+            localStorage.setItem('studyProgress', JSON.stringify(studyData));
+            loadStudyProgress();
+        }
+
+        // Load saved study goal
+        const savedGoal = localStorage.getItem('dailyStudyGoal');
+        if (savedGoal) {
+            document.getElementById('study-time').value = savedGoal;
+        }
+
+        // Allow Enter key to add goals
+        document.getElementById('goal-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('add-goal').click();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - EduPlatform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <i class="fas fa-graduation-cap me-2"></i>EduPlatform
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="courses.html">Courses</a>
+                    </li>
+                    <li class="nav-item auth-required" style="display: none;">
+                        <a class="nav-link" href="student-dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item auth-required" style="display: none;">
+                        <a class="nav-link" href="certificates.html">Certificates</a>
+                    </li>
+                    <li class="nav-item guest-only">
+                        <a class="nav-link" href="login.html" id="login-btn">Login</a>
+                    </li>
+                    <li class="nav-item guest-only">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item dropdown auth-required" style="display: none;" id="user-info">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-1"></i><span class="user-name">User</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logout-btn">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-primary text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1><i class="fas fa-book-open me-3"></i>All Courses</h1>
+                    <p class="lead">Discover our comprehensive library of courses designed to help you achieve your learning goals.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <i class="fas fa-graduation-cap" style="font-size: 5rem; opacity: 0.3;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <input type="text" class="form-control" id="search-courses" 
+                               placeholder="Search courses by title or instructor...">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-select" id="level-filter">
+                        <option value="">All Levels</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <main class="container py-5">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-3 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-filter me-2"></i>Filter Courses</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Price</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="price" value="" id="price-all" checked>
+                                <label class="form-check-label" for="price-all">All Courses</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="price" value="free" id="price-free">
+                                <label class="form-check-label" for="price-free">Free Only</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="price" value="paid" id="price-paid">
+                                <label class="form-check-label" for="price-paid">Paid Only</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Sort By</label>
+                            <select class="form-select" id="sort-by">
+                                <option value="newest">Newest First</option>
+                                <option value="popular">Most Popular</option>
+                                <option value="title">Title A-Z</option>
+                                <option value="level">Level</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-primary w-100" id="apply-filters">
+                            <i class="fas fa-search me-2"></i>Apply Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats Card -->
+                <div class="card mt-4">
+                    <div class="card-body text-center">
+                        <h5>Platform Stats</h5>
+                        <div class="mb-2">
+                            <div class="h4 text-primary mb-0" id="total-courses">-</div>
+                            <small class="text-muted">Total Courses</small>
+                        </div>
+                        <div class="mb-2">
+                            <div class="h4 text-success mb-0">50+</div>
+                            <small class="text-muted">Expert Instructors</small>
+                        </div>
+                        <div>
+                            <div class="h4 text-info mb-0">1000+</div>
+                            <small class="text-muted">Happy Students</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses Grid -->
+            <div class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3>Available Courses</h3>
+                    <div class="d-flex align-items-center">
+                        <span class="text-muted me-3" id="course-count">Loading...</span>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-outline-secondary active" id="grid-view">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary" id="list-view">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="courses-container">
+                    <!-- Loading State -->
+                    <div class="col-12 text-center py-5">
+                        <div class="loading"></div>
+                        <p class="mt-3">Loading courses...</p>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Courses pagination" class="mt-4">
+                    <ul class="pagination justify-content-center" id="pagination">
+                        <!-- Pagination will be generated dynamically -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>EduPlatform</h5>
+                    <p>Transform your future with our comprehensive online courses.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 EduPlatform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main JavaScript -->
+    <script src="../js/app.js"></script>
+    
+    <script>
+        // Courses page specific functionality
+        let allCourses = [];
+        let filteredCourses = [];
+        let currentPage = 1;
+        const coursesPerPage = 9;
+
+        // Load courses when page loads
+        document.addEventListener('DOMContentLoaded', async function() {
+            if (window.app) {
+                allCourses = await window.app.loadCourses();
+                filteredCourses = [...allCourses];
+                updateCourseCount();
+                renderCourses();
+            }
+        });
+
+        // Search functionality
+        document.getElementById('search-courses').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            filteredCourses = allCourses.filter(course => 
+                course.title.toLowerCase().includes(searchTerm) ||
+                course.instructor_name.toLowerCase().includes(searchTerm) ||
+                course.description.toLowerCase().includes(searchTerm)
+            );
+            currentPage = 1;
+            renderCourses();
+        });
+
+        // Level filter
+        document.getElementById('level-filter').addEventListener('change', function() {
+            const level = this.value;
+            if (level) {
+                filteredCourses = allCourses.filter(course => course.level === level);
+            } else {
+                filteredCourses = [...allCourses];
+            }
+            currentPage = 1;
+            renderCourses();
+        });
+
+        // View toggle
+        document.getElementById('grid-view').addEventListener('click', function() {
+            this.classList.add('active');
+            document.getElementById('list-view').classList.remove('active');
+            document.getElementById('courses-container').className = 'row';
+            renderCourses();
+        });
+
+        document.getElementById('list-view').addEventListener('click', function() {
+            this.classList.add('active');
+            document.getElementById('grid-view').classList.remove('active');
+            document.getElementById('courses-container').className = 'row';
+            renderCourses(true);
+        });
+
+        function updateCourseCount() {
+            document.getElementById('total-courses').textContent = allCourses.length;
+            document.getElementById('course-count').textContent = `${filteredCourses.length} courses found`;
+        }
+
+        function renderCourses(listView = false) {
+            const container = document.getElementById('courses-container');
+            const startIndex = (currentPage - 1) * coursesPerPage;
+            const endIndex = startIndex + coursesPerPage;
+            const coursesToShow = filteredCourses.slice(startIndex, endIndex);
+
+            if (coursesToShow.length === 0) {
+                container.innerHTML = `
+                    <div class="col-12 text-center py-5">
+                        <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                        <h5>No courses found</h5>
+                        <p class="text-muted">Try adjusting your search or filter criteria.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            if (listView) {
+                container.innerHTML = coursesToShow.map(course => `
+                    <div class="col-12 mb-3">
+                        <div class="card course-item">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
+                                        ${course.thumbnail ? 
+                                            `<img src="${course.thumbnail}" class="img-fluid" alt="${course.title}">` :
+                                            `<i class="fas fa-play-circle fa-3x text-primary"></i>`
+                                        }
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${course.title}</h5>
+                                        <p class="card-text">${course.description}</p>
+                                        <div class="course-meta mb-3">
+                                            <span class="course-level level-${course.level}">${course.level}</span>
+                                            <span class="ms-3 text-muted">By ${course.instructor_name}</span>
+                                            <span class="ms-3 text-muted">${course.enrollment_count || 0} students</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="text-primary h5 mb-0">
+                                                ${course.price > 0 ? `$${course.price}` : 'Free'}
+                                            </div>
+                                            <a href="course-detail.html?id=${course.id}" class="btn btn-primary">
+                                                View Course
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                container.innerHTML = coursesToShow.map(course => `
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
+                                ${course.thumbnail ? 
+                                    `<img src="${course.thumbnail}" class="img-fluid" alt="${course.title}">` :
+                                    `<i class="fas fa-play-circle fa-3x text-primary"></i>`
+                                }
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">${course.title}</h5>
+                                <p class="card-text flex-grow-1">${course.description.substring(0, 100)}...</p>
+                                <div class="course-meta mb-3">
+                                    <span class="course-level level-${course.level}">${course.level}</span>
+                                    <small class="text-muted d-block">By ${course.instructor_name}</small>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-auto">
+                                    <div class="text-primary h6 mb-0">
+                                        ${course.price > 0 ? `$${course.price}` : 'Free'}
+                                    </div>
+                                    <a href="course-detail.html?id=${course.id}" class="btn btn-primary btn-sm">
+                                        View Course
+                                    </a>
+                                </div>
+                                <small class="text-muted">${course.enrollment_count || 0} students enrolled</small>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            updateCourseCount();
+            renderPagination();
+        }
+
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredCourses.length / coursesPerPage);
+            const pagination = document.getElementById('pagination');
+
+            if (totalPages <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+
+            let paginationHTML = '';
+
+            // Previous button
+            paginationHTML += `
+                <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                    <a class="page-link" href="#" onclick="changePage(${currentPage - 1})">Previous</a>
+                </li>
+            `;
+
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === currentPage || Math.abs(i - currentPage) <= 2 || i === 1 || i === totalPages) {
+                    paginationHTML += `
+                        <li class="page-item ${i === currentPage ? 'active' : ''}">
+                            <a class="page-link" href="#" onclick="changePage(${i})">${i}</a>
+                        </li>
+                    `;
+                } else if (Math.abs(i - currentPage) === 3) {
+                    paginationHTML += '<li class="page-item disabled"><span class="page-link">...</span></li>';
+                }
+            }
+
+            // Next button
+            paginationHTML += `
+                <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+                    <a class="page-link" href="#" onclick="changePage(${currentPage + 1})">Next</a>
+                </li>
+            `;
+
+            pagination.innerHTML = paginationHTML;
+        }
+
+        function changePage(page) {
+            const totalPages = Math.ceil(filteredCourses.length / coursesPerPage);
+            if (page >= 1 && page <= totalPages) {
+                currentPage = page;
+                renderCourses();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
